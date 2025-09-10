@@ -1,0 +1,15 @@
+{
+  "name": "@workspace/math",
+  "version": "1.0.0",
+  "main": "dist/add.js",
+  "types": "dist/add.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev":"tsc --watch"
+  },
+  "devDependencies": {
+    "@workspace/typescript-config": "workspace:*",
+    "typescript": "^5.9.2"
+  }
+}

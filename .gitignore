@@ -1,0 +1,71 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+coverage
+
+# Turbo
+.turbo
+
+# Vercel
+.vercel
+
+# Build Outputs
+.next/
+out/
+build
+dist
+
+
+# Debug
+npm-debug.log*
+
+# Misc
+.DS_Store
+*.pem
+
+To initialize a Git repository for your pnpm monorepo (shadcn-ui-monorepo located at C:\Users\ffmou\Desktop\jerry), you’ll need to set up Git in the root directory, configure it to handle the monorepo structure, and ensure that your workspace packages (e.g., packages/math, packages/ui, apps/web, etc.) are properly tracked. Since you’re using a monorepo with multiple packages and apps, I’ll also include best practices for managing .gitignore and ensuring compatibility with your pnpm setup. Below are the steps to initialize and configure the Git repository.
+Steps to Initialize a Git Repository for Your Monorepo
+1. Navigate to the Monorepo Root
+Ensure you’re in the root directory of your monorepo (C:\Users\ffmou\Desktop\jerry).
+Action:
+bashcd C:\Users\ffmou\Desktop\jerry
+2. Initialize the Git Repository
+Initialize a new Git repository in the monorepo root.
+Action:
+bashgit init
+This creates a .git directory in C:\Users\ffmou\Desktop\jerry, marking it as the root of your Git repository.
+3. Create a .gitignore File
+Create a .gitignore file to exclude unnecessary files and directories (e.g., build artifacts, node_modules, etc.) from being tracked by Git. Since you’re using pnpm and a monorepo with Next.js and TypeScript, you’ll want to ignore common monorepo-specific and build-related files.
+Action:
+
+Create or edit C:\Users\ffmou\Desktop\jerry\.gitignore:
+gitignore# Node.js and pnpm
+node_modules/
+pnpm-lock.yaml
+.pnpm-store/
+.pnpm-debug.log
+
+# Build outputs
+/packages/*/dist/
+/apps/*/dist/
+/apps/*/out/
+/apps/*/.next/
+/packages/*/tsconfig.tsbuildinfo
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
